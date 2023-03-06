@@ -1,0 +1,214 @@
+.mainContainer {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+#audioBox {
+    width: 500px;
+    display: none;
+}
+div#buttonPause {
+    cursor: pointer;
+}
+#imageBox {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    transition: 0.5s ease-in-out;
+    z-index: 0;
+    background-image: url('./images/image5.jpg');
+}
+#myInput {
+    width: calc(25% - 20px);
+    height: 30px;
+    border-radius: 20px;
+    position: absolute;
+    top: calc(30% + 85px);
+    right: 10px;
+    border: 0.5px rgb(83, 83, 83) solid;
+    background-color: rgba(255, 255, 255, 0.49);
+    padding-left: 20px;
+    color: aliceblue;
+}
+::placeholder {
+    color: white;
+    opacity: 1; /* Firefox */
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color: white;
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+   color: white;
+  }
+#mainBox {
+    position: absolute;
+    top: 0;
+    width: 20%;
+    height: 70px;
+    background-color: rgba(0, 0, 0, 0.558);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    right: 30px;
+    top: 30%;
+    border-radius: 20px;
+}
+#buttonPrevious , #buttonNext {
+    color: white;
+    cursor: pointer;
+}
+#buttonPrevious:hover , #buttonNext:hover {
+    color: orange;
+}
+#repeat , #randomSong {
+    cursor: pointer;
+}
+#listBox {
+    position: absolute;
+    top: calc(30% + 125px);
+    width: 25%;
+    height: calc(100vh - 30% - 125px);
+    cursor: pointer;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.614);
+    z-index: 10;
+    overflow-y: scroll;
+}
+#list {
+    width: 100%;
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+}
+::-webkit-scrollbar {
+    width: 0px;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+.boxSong {
+    width: 95%;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    margin: 0;
+    border: none;
+    border-bottom: 1px black solid;
+    padding-left: 5%;
+}
+.boxSong.active {
+    background-color: rgba(255, 89, 0, 0.5);
+}
+.inforBox {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+}
+.title {
+    font-size: 20px;
+    padding-left: 20px;
+    color: aliceblue;
+}
+.singer {
+    padding-top: 5px;
+    padding-left: 20px;
+    color: bisque;
+}
+.image {
+    width: 40%;
+    height: 80%;
+    transform: translateY(10%);
+    
+}
+.image1 > .image {
+    background-image: url('./images/imageFairy.jpg');
+    background-size: cover;
+}
+
+.image2 > .image {
+    background-image: url('./images/imageWeather.jpg');
+    
+    background-size: cover;
+}
+.image3 > .image{
+    background-image: url('./images/imageLove.png');
+    background-size: cover;
+}
+.image4 > .image{
+    background-image: url('./images/imageFlower.jpg');
+    background-size: cover;
+}
+.image5 > .image {
+    background-image: url('./images/imageMoral.jpg');
+    background-size: cover;
+}
+.image6 > .image {
+    background-image: url('./images/imageLovesick.jpg');
+    background-size: cover;
+}
+.image7 > .image {
+    background-image: url('./images/imageNever.jpg');
+    background-size: cover;
+}
+.image8 > .image {
+    background-image: url('./images/imageAlways.jpg');
+    background-size: cover;
+}
+
+@media screen and (max-width: 1300px) {
+    #listBox {
+        width: 30%;
+    }
+    #myInput {
+        width: calc(30% - 20px);
+    }
+    #mainBox {
+        width: 26%;
+    }
+}
+
+@media screen and (max-width: 950px) {
+    #listBox {
+        width: 40%;
+    }
+    #myInput {
+        width: calc(40% - 20px);
+    }
+    #mainBox {
+        width: 36%;
+    }
+}
+@media screen and (max-width: 500px) {
+    #listBox {
+        width: 92%;
+        height: 30vh;
+        top: 67vh;
+    }
+    #myInput {
+        width: calc(90% - 20px);
+        top: calc(67vh - 40px);
+    }
+    #mainBox {
+        width: 80%;
+        top: calc(67vh - 120px);
+    }
+    .boxSong {
+        height: 70px;
+    }
+    .title {
+        font-size: 14px;
+    }
+    .singer {
+        font-size: 12px;
+    }
+    #imageBox {
+        background-image: url('./images/image5_mobile.jpg');
+    }
+}
+

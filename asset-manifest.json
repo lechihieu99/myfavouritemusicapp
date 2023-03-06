@@ -1,0 +1,41 @@
+{
+  "files": {
+    "main.css": "/myfavouritemusicapp/static/css/main.e0f33a2a.css",
+    "main.js": "/myfavouritemusicapp/static/js/main.e95551e3.js",
+    "static/js/787.514cbbf0.chunk.js": "/myfavouritemusicapp/static/js/787.514cbbf0.chunk.js",
+    "static/media/NeverComingBack.mp3": "/myfavouritemusicapp/static/media/NeverComingBack.c6c5e1b132bc66817be5.mp3",
+    "static/media/WaetheringWithYou.mp3": "/myfavouritemusicapp/static/media/WaetheringWithYou.550ee68ea17be0ecdf57.mp3",
+    "static/media/AlwaysWithYou.mp3": "/myfavouritemusicapp/static/media/AlwaysWithYou.92d3b2cc8d6176b56821.mp3",
+    "static/media/FlowerDance.mp3": "/myfavouritemusicapp/static/media/FlowerDance.cc30a3e62f836bcd891e.mp3",
+    "static/media/Moral.mp3": "/myfavouritemusicapp/static/media/Moral.ca8df53001c04e071fa1.mp3",
+    "static/media/LovesickGirls.mp3": "/myfavouritemusicapp/static/media/LovesickGirls.7e13505827222cfda732.mp3",
+    "static/media/imageLove.png": "/myfavouritemusicapp/static/media/imageLove.9202073a39a84f22f1c7.png",
+    "static/media/T96-Love.mp3": "/myfavouritemusicapp/static/media/T96-Love.574f7f5e2a9d71a3cb0b.mp3",
+    "static/media/imageNever.jpg": "/myfavouritemusicapp/static/media/imageNever.f17e2148eb689897c5d1.jpg",
+    "static/media/FairyTail.mp3": "/myfavouritemusicapp/static/media/FairyTail.45c69db518e731b288de.mp3",
+    "static/media/imageLove_mobile.png": "/myfavouritemusicapp/static/media/imageLove_mobile.d0e6e925e2b41fa8481e.png",
+    "static/media/imageNever_mobile.jpg": "/myfavouritemusicapp/static/media/imageNever_mobile.f572c7504595dbbe63ce.jpg",
+    "static/media/imageLovesick.jpg": "/myfavouritemusicapp/static/media/imageLovesick.7f59177e79fb39ebb950.jpg",
+    "static/media/imageFairy.jpg": "/myfavouritemusicapp/static/media/imageFairy.5211920d4b8564925ab8.jpg",
+    "static/media/imageWeather.jpg": "/myfavouritemusicapp/static/media/imageWeather.d7c6711de460b3159083.jpg",
+    "static/media/image5.jpg": "/myfavouritemusicapp/static/media/image5.93c3d0069490855b0bd6.jpg",
+    "static/media/imageFlower.jpg": "/myfavouritemusicapp/static/media/imageFlower.2d89a0eb47b93c4d4cc0.jpg",
+    "static/media/imageMoral.jpg": "/myfavouritemusicapp/static/media/imageMoral.0f3d938eb9d804bce56f.jpg",
+    "static/media/imageFairy_mobile.jpg": "/myfavouritemusicapp/static/media/imageFairy_mobile.f70077f8cef803cec529.jpg",
+    "static/media/imageLovesick_mobile.jpg": "/myfavouritemusicapp/static/media/imageLovesick_mobile.3e20187ad7b70f4c5ec2.jpg",
+    "static/media/image5_mobile.jpg": "/myfavouritemusicapp/static/media/image5_mobile.d068c7d5bc726a3a07ec.jpg",
+    "static/media/imageWeather_mobile.jpg": "/myfavouritemusicapp/static/media/imageWeather_mobile.5b40a36c81114223cc52.jpg",
+    "static/media/imageAlways.jpg": "/myfavouritemusicapp/static/media/imageAlways.db72e8c72037d7f83592.jpg",
+    "static/media/imageAlways_mobile.jpg": "/myfavouritemusicapp/static/media/imageAlways_mobile.ab5111185930585e4e68.jpg",
+    "static/media/imageFlower_mobile.jpg": "/myfavouritemusicapp/static/media/imageFlower_mobile.d6e6c131d5d4423d217e.jpg",
+    "static/media/imageMoral_mobile.jpg": "/myfavouritemusicapp/static/media/imageMoral_mobile.51a05aaddbd07e872be8.jpg",
+    "index.html": "/myfavouritemusicapp/index.html",
+    "main.e0f33a2a.css.map": "/myfavouritemusicapp/static/css/main.e0f33a2a.css.map",
+    "main.e95551e3.js.map": "/myfavouritemusicapp/static/js/main.e95551e3.js.map",
+    "787.514cbbf0.chunk.js.map": "/myfavouritemusicapp/static/js/787.514cbbf0.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e0f33a2a.css",
+    "static/js/main.e95551e3.js"
+  ]
+}

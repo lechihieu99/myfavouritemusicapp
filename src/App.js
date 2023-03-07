@@ -1,4 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component, useEffect } from 'react';
+import useSound from 'use-sound';
+import { ReactDOM } from 'react';
 import ReactAudioPlayer from 'react-audio-player';
 import FairyTail from './music/FairyTail.mp3';
 import Weathering from './music/WaetheringWithYou.mp3';
@@ -41,18 +43,30 @@ import {BiArrowToRight} from 'react-icons/bi';
 import $ from 'jquery';
 
 
+
 export default class App extends Component {
+  constructor(props)
+  {
+    super(props);
+    this.valueRange = this.valueRange.bind(this);
+  }
   state = {
     arr : new Array(),
     isPlaying : false,
     backgroundSrc : new Array(),
-    audio : document.getElementById('audioBox'),
-    idSong : 0 , 
+    audioBox : document.getElementById('audioBox'),
+    idSong : -1 , 
     repeat : false,
     randomSong : false,
     originID : 100 , 
     eventID : 100, 
-    windowWidth : 1500
+    windowWidth : 1500 ,
+    durationAudio : 0 ,
+    valueRange : 0
+  }
+  clickButton = () => {
+    var audio = document.getElementById('audioBox');
+    document.getElementById('text').innerHTML = audio.currentTime;
   }
   componentDidMount() {
     this.setState({arr : [FairyTail , Weathering , loveSong , FlowerDance , Moral , Lovesick , NeverComingBack , AlwaysWithYou]});
@@ -68,7 +82,33 @@ export default class App extends Component {
     var windowWidth = window.innerWidth;
     this.setState({windowWidth : windowWidth});
 
+    setInterval(this.duration , 1000);
+
+    // setInterval(() => {
+    //   var audio = document.getElementById('audioBox');
+    //   document.getElementById('inputRange').value = audio.currentTime;
+    // } , 2000);
+    document.getElementById('inputRange').value = 0;
+    if(this.valueRange() == false)
+    {
+      var audio = document.getElementById('audioBox');
+      audio.currentTime = 0;
+      setInterval(() => {
+        document.getElementById('inputRange').value = audio.currentTime;
+      } , 1000);
+    }
+    else {
+      var audio = document.getElementById('audioBox');
+      clearInterval(() => {
+        document.getElementById('inputRange').value = audio.currentTime;
+      });
+      audio.currentTime = document.getElementById('inputRange').value;
+      setInterval(() => {
+        document.getElementById('inputRange').value = audio.currentTime;
+      } , 1000);
+    }
   }
+
   changeBackground = (id , originID) => {
     var id = parseInt(id);
     var origin = originID;
@@ -114,7 +154,11 @@ export default class App extends Component {
 
     audio.src = this.state.arr[id];
     audio.volume = 0.6;
+    this.setState({audioBox : audio});
+    console.log(audio.duration);
     audio.play();
+
+    
 
     if(id == originID)
         originID = 100;
@@ -132,6 +176,8 @@ export default class App extends Component {
   actionAudio = (event) => {
     let idButton = event.target.id;
     this.setState({idSong : idButton});
+
+    document.getElementById('inputRange').value = 0;
     
     var audio = document.getElementById('audioBox');
 
@@ -144,6 +190,7 @@ export default class App extends Component {
 
     audio.src = this.state.arr[idButton];
     audio.volume = 0.6;
+
     audio.play();
 
     this.changeBackground(idButton, this.state.originID);
@@ -153,6 +200,7 @@ export default class App extends Component {
 
     var windowWidth2 = window.innerWidth;
     this.setState({windowWidth : windowWidth2});
+    
   }
   audioEvent = () => {
     var audio = document.getElementById('audioBox');
@@ -190,6 +238,7 @@ export default class App extends Component {
     
     this.setState({isPlaying : true});
     this.setState({idSong : id});
+    this.setState({originID : id});
 
     var windowWidth2 = window.innerWidth;
     this.setState({windowWidth : windowWidth2});
@@ -202,13 +251,33 @@ export default class App extends Component {
     var randomSong = this.state.randomSong;
     this.setState({randomSong : !randomSong});
   }
-  render() {
+  duration = () => {
+    var audio = document.getElementById('audioBox');
+    document.getElementById('inputRange').max = audio.duration;
+  }
+  valueRange = () => {
+    var valueR = document.getElementById('inputRange');
+    var audio = document.getElementById('audioBox');
+
+    audio.currentTime = valueR.value;
+    audio.play();
+
+    this.setState({isPlaying : true});
+    document.getElementById('inputRange').value = audio.currentTime;
+    console.log(document.getElementById('inputRange').value);
+    return true;
     
+  }
+    
+  
+  
+  render() {
     return(
       <>
       <div className='mainContainer'>
         <div id='imageBox'></div>
         <input id="myInput" type="text" placeholder="   Search.."></input>
+        <input id='inputRange' type='range' min={0} max={100} onClick={this.valueRange}></input>
         <div id='mainBox'>
           <div id='randomSong' onClick={this.randomSong}>{this.state.randomSong ? <FaRandom size={20} style={{color: 'orange'}}/> : <BiArrowToRight size={20} style={{color: 'white'}}/>}</div>
           <div id='buttonPrevious' onClick={this.previousSong}><MdSkipPrevious size={40} /></div>

@@ -43,10 +43,24 @@ div#buttonPause {
   ::-ms-input-placeholder { /* Microsoft Edge */
    color: white;
   }
+#inputRange {
+    position: absolute;
+    top: 0;
+    z-index: 15;
+    width: 22%;
+    right: 30px;
+    top: calc(30% - 10px);
+}
+
+#text {
+    position: absolute;
+    top: 10vh;
+    z-index: 15;
+}
 #mainBox {
     position: absolute;
     top: 0;
-    width: 20%;
+    width: 22%;
     height: 70px;
     background-color: rgba(0, 0, 0, 0.558);
     display: flex;
@@ -55,7 +69,10 @@ div#buttonPause {
     align-items: center;
     right: 30px;
     top: 30%;
-    border-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }
 #buttonPrevious , #buttonNext {
     color: white;
@@ -171,6 +188,9 @@ div#buttonPause {
     #mainBox {
         width: 26%;
     }
+    #inputRange {
+        width: 26%;
+    }
 }
 
 @media screen and (max-width: 950px) {
@@ -183,6 +203,9 @@ div#buttonPause {
     #mainBox {
         width: 36%;
     }
+    #inputRange {
+        width: 36%;
+    }
 }
 @media screen and (max-width: 500px) {
     #listBox {
@@ -191,12 +214,16 @@ div#buttonPause {
         top: 67vh;
     }
     #myInput {
-        width: calc(90% - 20px);
+        width: calc(92% - 20px);
         top: calc(67vh - 40px);
     }
     #mainBox {
         width: 80%;
         top: calc(67vh - 120px);
+    }
+    #inputRange {
+        width: 80%;
+        top: calc(67vh - 130px);
     }
     .boxSong {
         height: 70px;

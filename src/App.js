@@ -129,7 +129,10 @@ export default class App extends Component {
     boxSongs[id].classList.add('active');
     if (origin != 100)
     {
-      boxSongs[origin].classList.remove('active');
+      if(id != origin)
+      {
+        boxSongs[origin].classList.remove('active');
+      }
     }
   }
   autoPlaying = () => {

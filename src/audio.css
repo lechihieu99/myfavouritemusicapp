@@ -237,5 +237,39 @@ div#buttonPause {
     #imageBox {
         background-image: url('./images/image5_mobile.jpg');
     }
+    .image1 > .image {
+        background-image: url('./images/imageFairy_320p.jpg');
+        background-size: cover;
+    }
+    
+    .image2 > .image {
+        background-image: url('./images/imageWeather_320p.jpg');
+        
+        background-size: cover;
+    }
+    .image3 > .image{
+        background-image: url('./images/imageLove_320p.png');
+        background-size: cover;
+    }
+    .image4 > .image{
+        background-image: url('./images/imageFlower_320p.jpg');
+        background-size: cover;
+    }
+    .image5 > .image {
+        background-image: url('./images/imageMoral_320p.jpg');
+        background-size: cover;
+    }
+    .image6 > .image {
+        background-image: url('./images/imageLovesick_320p.jpg');
+        background-size: cover;
+    }
+    .image7 > .image {
+        background-image: url('./images/imageNever_320p.jpg');
+        background-size: cover;
+    }
+    .image8 > .image {
+        background-image: url('./images/imageAlways_320p.jpg');
+        background-size: cover;
+    }
 }
 

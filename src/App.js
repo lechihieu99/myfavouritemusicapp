@@ -49,6 +49,7 @@ export default class App extends Component {
   {
     super(props);
     this.valueRange = this.valueRange.bind(this);
+    this.setValue = this.valueRange.bind(this);
   }
   state = {
     arr : new Array(),
@@ -89,24 +90,12 @@ export default class App extends Component {
     //   document.getElementById('inputRange').value = audio.currentTime;
     // } , 2000);
     document.getElementById('inputRange').value = 0;
-    if(this.valueRange() == false)
-    {
-      var audio = document.getElementById('audioBox');
-      audio.currentTime = 0;
-      setInterval(() => {
-        document.getElementById('inputRange').value = audio.currentTime;
-      } , 1000);
-    }
-    else {
-      var audio = document.getElementById('audioBox');
-      clearInterval(() => {
-        document.getElementById('inputRange').value = audio.currentTime;
-      });
-      audio.currentTime = document.getElementById('inputRange').value;
-      setInterval(() => {
-        document.getElementById('inputRange').value = audio.currentTime;
-      } , 1000);
-    }
+    var audio = document.getElementById('audioBox');
+    setInterval(() => {
+      document.getElementById('inputRange').value = audio.currentTime;
+      console.log(document.getElementById('inputRange').value);
+    }, 2000);
+    
   }
 
   changeBackground = (id , originID) => {
@@ -259,14 +248,20 @@ export default class App extends Component {
     var valueR = document.getElementById('inputRange');
     var audio = document.getElementById('audioBox');
 
+    var setValue = setInterval(() => {
+      document.getElementById('inputRange').value = audio.currentTime;
+      console.log(document.getElementById('inputRange').value);
+    }, 2000);
+
+    clearInterval(setValue);
+
     audio.currentTime = valueR.value;
     audio.play();
 
-    this.setState({isPlaying : true});
     document.getElementById('inputRange').value = audio.currentTime;
-    console.log(document.getElementById('inputRange').value);
-    return true;
-    
+    // console.log(document.getElementById('inputRange').value);
+
+    this.setState({isPlaying : true});
   }
     
   

@@ -248,13 +248,6 @@ export default class App extends Component {
     var valueR = document.getElementById('inputRange');
     var audio = document.getElementById('audioBox');
 
-    var setValue = setInterval(() => {
-      document.getElementById('inputRange').value = audio.currentTime;
-      console.log(document.getElementById('inputRange').value);
-    }, 2000);
-
-    clearInterval(setValue);
-
     audio.currentTime = valueR.value;
     audio.play();
 

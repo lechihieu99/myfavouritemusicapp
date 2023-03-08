@@ -27,6 +27,15 @@ import imageLovesickMobile from './images/imageLovesick_mobile.jpg';
 import imageNeverMobile from './images/imageNever_mobile.jpg';
 import imageAlwaysMobile from './images/imageAlways_mobile.jpg';
 
+import imageFairy0 from './images/imageFairyCircle.jpg';
+import imageWeather0 from './images/imageWeatherCircle.jpg';
+import imageLove0 from './images/imageLoveCircle.png';
+import imageFlower0 from './images/imageFlowerCircle.jpg';
+import imageMoral0 from './images/imageMoralCircle.jpg';
+import imageLovesick0 from './images/imageLovesickCircle.jpg';
+import imageNever0 from './images/imageNeverCircle.jpg';
+import imageAlways0 from './images/imageAlwaysCircle.jpg';
+
 import './audio.css'
 
 import {MdSkipPrevious} from 'react-icons/md';
@@ -56,6 +65,7 @@ export default class App extends Component {
     arr : new Array(),
     isPlaying : false,
     backgroundSrc : new Array(),
+    circleBox : new Array(),
     audioBox : document.getElementById('audioBox'),
     idSong : -1 , 
     repeat : false,
@@ -66,7 +76,8 @@ export default class App extends Component {
     durationAudio : 0 ,
     valueRange : 0 ,
     volume : 0 ,
-    isOpenVolume : false
+    isOpenVolume : false ,
+    count : 0 
   }
   clickButton = () => {
     var audio = document.getElementById('audioBox');
@@ -76,6 +87,7 @@ export default class App extends Component {
     this.setState({arr : [FairyTail , Weathering , loveSong , FlowerDance , Moral , Lovesick , NeverComingBack , AlwaysWithYou]});
     this.setState({backgroundSrc : [imageFairy , imageWeather , imageLove , imageFlower , imageMoral, imageLovesick , imageNever , imageAlways]});
     this.setState({backgroundSrcMobile : [imageFairyMobile , imageWeatherMobile , imageLoveMobile , imageFlowerMobile , imageMoralMobile, imageLovesickMobile , imageNeverMobile , imageAlwaysMobile]});
+    this.setState({circleBox : [imageFairy0 , imageWeather0 , imageLove0 , imageFlower0 , imageMoral0, imageLovesick0 , imageNever0 , imageAlways0]})
 
     $("#myInput").on("keyup", function() {
       var value = $(this).val().toLowerCase();
@@ -112,14 +124,14 @@ export default class App extends Component {
     setInterval(() => {
       minutes = parseInt(audio.currentTime) / 60;
       seconds = parseInt(audio.currentTime) % 60;
-      console.log(minutes);
-      console.log(seconds);
       minutes < 1 ? textMinutes = '00' : (minutes >= 1 && minutes <= 9 ? textMinutes = '0' + parseInt(minutes) : textMinutes = parseInt(minutes));
       seconds < 1 ? textSeconds = '00' : (seconds >= 1 && seconds <= 9 ? textSeconds = '0' + parseInt(seconds) : textSeconds = parseInt(seconds));
 
       text = textMinutes + ':' + textSeconds;
       document.getElementById('timeline').innerHTML = text;
     }, 1000);
+
+    
   }
 
   changeBackground = (id , originID) => {
@@ -168,13 +180,15 @@ export default class App extends Component {
     else
       background.style.backgroundImage = 'url(' + this.state.backgroundSrc[id] + ')';
 
+    var circle = document.getElementById('circleBox');
+    circle.style.backgroundImage = 'url(' + this.state.circleBox[id] + ')';
+
     audio.src = this.state.arr[id];
     audio.volume = 0.6;
     this.setState({audioBox : audio});
-    console.log(audio.duration);
     audio.play();
 
-    
+    this.setState({count : 0});
 
     if(id == originID)
         originID = 100;
@@ -190,6 +204,7 @@ export default class App extends Component {
 
   }
   actionAudio = (event) => {
+
     let idButton = event.target.id;
     this.setState({idSong : idButton});
 
@@ -204,6 +219,9 @@ export default class App extends Component {
     else
       background.style.backgroundImage = 'url(' + this.state.backgroundSrc[idButton] + ')';
 
+    
+    document.getElementById('circleBox').style.backgroundImage = 'url(' + this.state.circleBox[idButton] + ')';
+
     audio.src = this.state.arr[idButton];
     audio.volume = 0.6;
 
@@ -217,6 +235,7 @@ export default class App extends Component {
     var windowWidth2 = window.innerWidth;
     this.setState({windowWidth : windowWidth2});
     
+    
   }
   audioEvent = () => {
     var audio = document.getElementById('audioBox');
@@ -229,6 +248,7 @@ export default class App extends Component {
 
     var windowWidth = window.innerWidth;
     this.setState({windowWidth : windowWidth});
+    this.setState({count : 0});
   }
   previousSong = () => {
     var id = this.state.idSong;
@@ -246,6 +266,8 @@ export default class App extends Component {
     else
       background.style.backgroundImage = 'url(' + this.state.backgroundSrc[id] + ')';
 
+    var circle = document.getElementById('circleBox');
+    circle.style.backgroundImage = 'url(' + this.state.circleBox[id] + ')';
     audio.src = this.state.arr[id];
     audio.volume = 0.6;
     audio.play();
@@ -258,6 +280,7 @@ export default class App extends Component {
 
     var windowWidth2 = window.innerWidth;
     this.setState({windowWidth : windowWidth2});
+    this.setState({count : 0});
   }
   repeatSong = () => {
     var repeat = this.state.repeat;
@@ -275,7 +298,6 @@ export default class App extends Component {
     var audio = document.getElementById('audioBox');
     var setValue = setInterval(() => {
       document.getElementById('inputRange').value = audio.currentTime;
-      console.log(document.getElementById('inputRange').value);
     }, 1000);
     clearInterval(setValue);
     var valueR = document.getElementById('inputRange');
@@ -328,6 +350,7 @@ export default class App extends Component {
           <div id='buttonNext' onClick={this.autoPlaying}><MdSkipNext size={40}/></div>
           <div id='repeat' onClick={this.repeatSong}>{this.state.repeat? <BsRepeat1 size={20} style={{color: 'orange'}}/> : <BsRepeat size={20} style={{color: 'white'}}/>}</div>
         </div>
+        <div id='circleBox'></div>
         <div id='listBox'>
           <div id='list'>
             <audio id='audioBox' src='' controls onEnded={this.autoPlaying}></audio>

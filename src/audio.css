@@ -5,7 +5,7 @@
 }
 #audioBox {
     width: 500px;
-    display: none;
+    display: block;
 }
 div#buttonPause {
     cursor: pointer;

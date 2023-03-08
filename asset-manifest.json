@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/myfavouritemusicapp/static/css/main.aef0f0ff.css",
+    "main.css": "/myfavouritemusicapp/static/css/main.e5bbd273.css",
     "main.js": "/myfavouritemusicapp/static/js/main.b8552d7c.js",
     "static/js/845.5cba9ec1.chunk.js": "/myfavouritemusicapp/static/js/845.5cba9ec1.chunk.js",
     "static/js/787.514cbbf0.chunk.js": "/myfavouritemusicapp/static/js/787.514cbbf0.chunk.js",
@@ -39,13 +39,13 @@
     "static/media/imageFlower_320p.jpg": "/myfavouritemusicapp/static/media/imageFlower_320p.57e5420394e412d90a9b.jpg",
     "static/media/imageMoral_320p.jpg": "/myfavouritemusicapp/static/media/imageMoral_320p.e8a972d6f02eb3cc0565.jpg",
     "index.html": "/myfavouritemusicapp/index.html",
-    "main.aef0f0ff.css.map": "/myfavouritemusicapp/static/css/main.aef0f0ff.css.map",
+    "main.e5bbd273.css.map": "/myfavouritemusicapp/static/css/main.e5bbd273.css.map",
     "main.b8552d7c.js.map": "/myfavouritemusicapp/static/js/main.b8552d7c.js.map",
     "845.5cba9ec1.chunk.js.map": "/myfavouritemusicapp/static/js/845.5cba9ec1.chunk.js.map",
     "787.514cbbf0.chunk.js.map": "/myfavouritemusicapp/static/js/787.514cbbf0.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.aef0f0ff.css",
+    "static/css/main.e5bbd273.css",
     "static/js/main.b8552d7c.js"
   ]
 }

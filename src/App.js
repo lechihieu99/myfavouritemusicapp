@@ -1,6 +1,4 @@
 import React, { Component, useEffect } from 'react';
-import useSound from 'use-sound';
-import { ReactDOM } from 'react';
 import ReactAudioPlayer from 'react-audio-player';
 import FairyTail from './music/FairyTail.mp3';
 import Weathering from './music/WaetheringWithYou.mp3';
@@ -90,11 +88,10 @@ export default class App extends Component {
     //   document.getElementById('inputRange').value = audio.currentTime;
     // } , 2000);
     document.getElementById('inputRange').value = 0;
-    var audio = document.getElementById('audioBox');
-    setInterval(() => {
-      document.getElementById('inputRange').value = audio.currentTime;
-      console.log(document.getElementById('inputRange').value);
-    }, 2000);
+    // var audio = document.getElementById('audioBox');
+    // setInterval(() => {
+    //   document.getElementById('inputRange').value = audio.currentTime;
+    // }, 2000);
     
   }
 

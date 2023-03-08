@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/myfavouritemusicapp/static/css/main.86935ef0.css",
-    "main.js": "/myfavouritemusicapp/static/js/main.3e1ab4cd.js",
+    "main.css": "/myfavouritemusicapp/static/css/main.53363ddf.css",
+    "main.js": "/myfavouritemusicapp/static/js/main.1d88ffdd.js",
     "static/js/787.514cbbf0.chunk.js": "/myfavouritemusicapp/static/js/787.514cbbf0.chunk.js",
     "static/media/NeverComingBack.mp3": "/myfavouritemusicapp/static/media/NeverComingBack.c6c5e1b132bc66817be5.mp3",
     "static/media/WaetheringWithYou.mp3": "/myfavouritemusicapp/static/media/WaetheringWithYou.550ee68ea17be0ecdf57.mp3",
@@ -20,6 +20,8 @@
     "static/media/imageWeather.jpg": "/myfavouritemusicapp/static/media/imageWeather.d7c6711de460b3159083.jpg",
     "static/media/image5.jpg": "/myfavouritemusicapp/static/media/image5.93c3d0069490855b0bd6.jpg",
     "static/media/imageFlower.jpg": "/myfavouritemusicapp/static/media/imageFlower.2d89a0eb47b93c4d4cc0.jpg",
+    "static/media/imageLoveCircle.png": "/myfavouritemusicapp/static/media/imageLoveCircle.aac530ce6597d94765f7.png",
+    "static/media/imageNeverCircle.jpg": "/myfavouritemusicapp/static/media/imageNeverCircle.a5a3f6f4ba13759c714b.jpg",
     "static/media/imageMoral.jpg": "/myfavouritemusicapp/static/media/imageMoral.0f3d938eb9d804bce56f.jpg",
     "static/media/imageFairy_mobile.jpg": "/myfavouritemusicapp/static/media/imageFairy_mobile.f70077f8cef803cec529.jpg",
     "static/media/imageLove_320p.png": "/myfavouritemusicapp/static/media/imageLove_320p.e5e016ce477e0ca92eeb.png",
@@ -31,6 +33,12 @@
     "static/media/imageAlways_mobile.jpg": "/myfavouritemusicapp/static/media/imageAlways_mobile.ab5111185930585e4e68.jpg",
     "static/media/imageFlower_mobile.jpg": "/myfavouritemusicapp/static/media/imageFlower_mobile.d6e6c131d5d4423d217e.jpg",
     "static/media/imageMoral_mobile.jpg": "/myfavouritemusicapp/static/media/imageMoral_mobile.51a05aaddbd07e872be8.jpg",
+    "static/media/imageAlwaysCircle.jpg": "/myfavouritemusicapp/static/media/imageAlwaysCircle.40975ef78abaa3359769.jpg",
+    "static/media/imageFairyCircle.jpg": "/myfavouritemusicapp/static/media/imageFairyCircle.2a7e40682eefbf7292d7.jpg",
+    "static/media/imageWeatherCircle.jpg": "/myfavouritemusicapp/static/media/imageWeatherCircle.e98f0f90a9ac0a41ff2f.jpg",
+    "static/media/imageLovesickCircle.jpg": "/myfavouritemusicapp/static/media/imageLovesickCircle.68402a156835e41fb481.jpg",
+    "static/media/imageFlowerCircle.jpg": "/myfavouritemusicapp/static/media/imageFlowerCircle.5211b6028c9e232f2150.jpg",
+    "static/media/imageMoralCircle.jpg": "/myfavouritemusicapp/static/media/imageMoralCircle.a4c54faf24991fbb7026.jpg",
     "static/media/imageAlways_320p.jpg": "/myfavouritemusicapp/static/media/imageAlways_320p.46ea47a43744e37b3781.jpg",
     "static/media/imageWeather_320p.jpg": "/myfavouritemusicapp/static/media/imageWeather_320p.29477433db9005292384.jpg",
     "static/media/imageLovesick_320p.jpg": "/myfavouritemusicapp/static/media/imageLovesick_320p.a8738a34459ab4c82ec0.jpg",
@@ -38,12 +46,12 @@
     "static/media/imageFlower_320p.jpg": "/myfavouritemusicapp/static/media/imageFlower_320p.57e5420394e412d90a9b.jpg",
     "static/media/imageMoral_320p.jpg": "/myfavouritemusicapp/static/media/imageMoral_320p.e8a972d6f02eb3cc0565.jpg",
     "index.html": "/myfavouritemusicapp/index.html",
-    "main.86935ef0.css.map": "/myfavouritemusicapp/static/css/main.86935ef0.css.map",
-    "main.3e1ab4cd.js.map": "/myfavouritemusicapp/static/js/main.3e1ab4cd.js.map",
+    "main.53363ddf.css.map": "/myfavouritemusicapp/static/css/main.53363ddf.css.map",
+    "main.1d88ffdd.js.map": "/myfavouritemusicapp/static/js/main.1d88ffdd.js.map",
     "787.514cbbf0.chunk.js.map": "/myfavouritemusicapp/static/js/787.514cbbf0.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.86935ef0.css",
-    "static/js/main.3e1ab4cd.js"
+    "static/css/main.53363ddf.css",
+    "static/js/main.1d88ffdd.js"
   ]
 }

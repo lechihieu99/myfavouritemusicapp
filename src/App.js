@@ -88,10 +88,10 @@ export default class App extends Component {
     //   document.getElementById('inputRange').value = audio.currentTime;
     // } , 2000);
     document.getElementById('inputRange').value = 0;
-    // var audio = document.getElementById('audioBox');
-    // setInterval(() => {
-    //   document.getElementById('inputRange').value = audio.currentTime;
-    // }, 2000);
+    var audio = document.getElementById('audioBox');
+    setInterval(() => {
+      document.getElementById('inputRange').value = audio.currentTime;
+    }, 2000);
     
   }
 
@@ -242,9 +242,14 @@ export default class App extends Component {
     document.getElementById('inputRange').max = audio.duration;
   }
   valueRange = () => {
-    var valueR = document.getElementById('inputRange');
     var audio = document.getElementById('audioBox');
-
+    var setValue = setInterval(() => {
+      document.getElementById('inputRange').value = audio.currentTime;
+      console.log(document.getElementById('inputRange').value);
+    }, 1000);
+    clearInterval(setValue);
+    var valueR = document.getElementById('inputRange');
+    
     audio.currentTime = valueR.value;
     audio.play();
 
@@ -262,7 +267,7 @@ export default class App extends Component {
       <div className='mainContainer'>
         <div id='imageBox'></div>
         <input id="myInput" type="text" placeholder="   Search.."></input>
-        <input id='inputRange' type='range' min={0} max={100} onClick={this.valueRange}></input>
+        <input id='inputRange' type='range' min={0} max={100} onChange={this.valueRange}></input>
         <div id='mainBox'>
           <div id='randomSong' onClick={this.randomSong}>{this.state.randomSong ? <FaRandom size={20} style={{color: 'orange'}}/> : <BiArrowToRight size={20} style={{color: 'white'}}/>}</div>
           <div id='buttonPrevious' onClick={this.previousSong}><MdSkipPrevious size={40} /></div>

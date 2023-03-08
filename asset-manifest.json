@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/myfavouritemusicapp/static/css/main.86935ef0.css",
-    "main.js": "/myfavouritemusicapp/static/js/main.64092bcc.js",
+    "main.js": "/myfavouritemusicapp/static/js/main.3e1ab4cd.js",
     "static/js/787.514cbbf0.chunk.js": "/myfavouritemusicapp/static/js/787.514cbbf0.chunk.js",
     "static/media/NeverComingBack.mp3": "/myfavouritemusicapp/static/media/NeverComingBack.c6c5e1b132bc66817be5.mp3",
     "static/media/WaetheringWithYou.mp3": "/myfavouritemusicapp/static/media/WaetheringWithYou.550ee68ea17be0ecdf57.mp3",
@@ -39,11 +39,11 @@
     "static/media/imageMoral_320p.jpg": "/myfavouritemusicapp/static/media/imageMoral_320p.e8a972d6f02eb3cc0565.jpg",
     "index.html": "/myfavouritemusicapp/index.html",
     "main.86935ef0.css.map": "/myfavouritemusicapp/static/css/main.86935ef0.css.map",
-    "main.64092bcc.js.map": "/myfavouritemusicapp/static/js/main.64092bcc.js.map",
+    "main.3e1ab4cd.js.map": "/myfavouritemusicapp/static/js/main.3e1ab4cd.js.map",
     "787.514cbbf0.chunk.js.map": "/myfavouritemusicapp/static/js/787.514cbbf0.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.86935ef0.css",
-    "static/js/main.64092bcc.js"
+    "static/js/main.3e1ab4cd.js"
   ]
 }

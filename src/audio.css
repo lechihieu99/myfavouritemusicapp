@@ -10,6 +10,7 @@
 div#buttonPause {
     cursor: pointer;
 }
+
 #imageBox {
     position: absolute;
     width: 100%;
@@ -50,6 +51,41 @@ div#buttonPause {
     width: 22%;
     right: 30px;
     top: calc(30% - 10px);
+}
+#timeline {
+    position: absolute;
+    top: calc(30% - 30px);
+    right: calc(20%);
+    z-index: 15;
+    text-shadow: black 1px 1px;
+    color: rgba(255, 255, 255, 0.734);
+}
+#volume {
+    position: absolute;
+    z-index: 15;
+    right: -10px;
+    top: 90px;
+    width: 120px;
+    transform: rotate(-90deg);
+    cursor: pointer;
+    display: none;
+}
+#volume.active {
+    display: block;
+}
+#volumeBox {
+    z-index: 15;
+    position: absolute;
+    top: calc(30% - 45px);
+    right: 30px;
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.793);
+    background-color: rgba(0, 0, 0, 0.441);
+    border-radius: 3px;
+    padding-left: 8px;
+    padding-top: 3px;
+    padding-right: 5px;
+    text-align: center;
 }
 
 #text {
@@ -191,6 +227,15 @@ div#buttonPause {
     #inputRange {
         width: 26%;
     }
+    #timeline {
+        right: calc(20% + 30px);
+    }
+    #volume {
+        right: -10px;
+        top: 80px;
+        width: 100px;
+        
+    }
 }
 
 @media screen and (max-width: 950px) {
@@ -205,6 +250,13 @@ div#buttonPause {
     }
     #inputRange {
         width: 36%;
+    }
+    #timeline {
+        right: calc(30%);
+    }
+    #volume {
+        top: 60px;
+        width: 100px;
     }
 }
 @media screen and (max-width: 500px) {
@@ -225,6 +277,10 @@ div#buttonPause {
         width: 80%;
         top: calc(67vh - 130px);
     }
+    #timeline {
+        right: 70%;
+        top: calc(67vh - 150px);
+    }
     .boxSong {
         height: 70px;
     }
@@ -236,6 +292,14 @@ div#buttonPause {
     }
     #imageBox {
         background-image: url('./images/image5_mobile.jpg');
+    }
+    #volume {
+        top: calc(67vh - 200px - 50px);
+        width: 120px;
+    }
+    #volumeBox {
+        top: calc(67vh - 170px);
+        right: 30px;
     }
     
 }

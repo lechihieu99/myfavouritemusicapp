@@ -40,7 +40,10 @@ import {BiArrowToRight} from 'react-icons/bi';
 
 import $ from 'jquery';
 
-
+import {ImVolumeHigh} from 'react-icons/im';
+import {ImVolumeMedium} from 'react-icons/im';
+import {ImVolumeLow} from 'react-icons/im';
+import {ImVolumeMute2} from 'react-icons/im';
 
 export default class App extends Component {
   constructor(props)
@@ -61,7 +64,9 @@ export default class App extends Component {
     eventID : 100, 
     windowWidth : 1500 ,
     durationAudio : 0 ,
-    valueRange : 0
+    valueRange : 0 ,
+    volume : 0 ,
+    isOpenVolume : false
   }
   clickButton = () => {
     var audio = document.getElementById('audioBox');
@@ -88,11 +93,33 @@ export default class App extends Component {
     //   document.getElementById('inputRange').value = audio.currentTime;
     // } , 2000);
     document.getElementById('inputRange').value = 0;
+    document.getElementById('volume').value = 60;
+    var value = document.getElementById('volume').value;
+    this.setState({volume : parseInt(value)})
     var audio = document.getElementById('audioBox');
     setInterval(() => {
       document.getElementById('inputRange').value = audio.currentTime;
     }, 2000);
     
+
+    var audio = document.getElementById('audioBox');
+    var minutes = 0;
+    var seconds = 0;
+    var textMinutes = '';
+    var textSeconds = '';
+    var text = '';
+
+    setInterval(() => {
+      minutes = parseInt(audio.currentTime) / 60;
+      seconds = parseInt(audio.currentTime) % 60;
+      console.log(minutes);
+      console.log(seconds);
+      minutes < 1 ? textMinutes = '00' : (minutes >= 1 && minutes <= 9 ? textMinutes = '0' + parseInt(minutes) : textMinutes = parseInt(minutes));
+      seconds < 1 ? textSeconds = '00' : (seconds >= 1 && seconds <= 9 ? textSeconds = '0' + parseInt(seconds) : textSeconds = parseInt(seconds));
+
+      text = textMinutes + ':' + textSeconds;
+      document.getElementById('timeline').innerHTML = text;
+    }, 1000);
   }
 
   changeBackground = (id , originID) => {
@@ -258,14 +285,37 @@ export default class App extends Component {
 
     this.setState({isPlaying : true});
   }
-    
-  
+  changeVolume = () => {
+    var audio = document.getElementById('audioBox');
+    var volume = document.getElementById('volume').value;
+
+    audio.volume = parseInt(volume) / 100;
+
+    this.setState({volume : volume});
+  }
+  openVolumeBar = () => {
+    var volume = document.getElementById('volume');
+    var isOpenVolume = this.state.isOpenVolume;
+
+    if(isOpenVolume == false)
+    {
+      volume.classList.add('active');
+      this.setState({isOpenVolume : true});
+    }
+    else {
+      volume.classList.remove('active');
+      this.setState({isOpenVolume : false});
+    }
+  }
   
   render() {
     return(
       <>
       <div className='mainContainer'>
         <div id='imageBox'></div>
+        <input onChange={this.changeVolume} id='volume' type='range' min={0} max={100}></input>
+        <div id='timeline'></div>
+        <div onClick={this.openVolumeBar} id='volumeBox'>{this.state.volume >= 75 ? <ImVolumeHigh size={30} /> : (this.state.volume >= 50 && this.state.volume < 75 ? <ImVolumeMedium size={30} /> : (this.state.volume > 0 && this.state.volume < 50 ? <ImVolumeLow size={30}/> : <ImVolumeMute2 size={30} />))}</div>
         <input id="myInput" type="text" placeholder="   Search.."></input>
         <input id='inputRange' type='range' min={0} max={100} onChange={this.valueRange}></input>
         <div id='mainBox'>

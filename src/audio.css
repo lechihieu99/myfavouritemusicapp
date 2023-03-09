@@ -309,7 +309,7 @@ div#buttonPause {
         padding-left: 10px;
     }
     #inputRange {
-        width: 80%;
+        width: calc(80% - 5px);
         top: calc(67vh - 130px);
         right: calc(10% - 5px);
     }

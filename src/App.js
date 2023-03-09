@@ -111,7 +111,7 @@ export default class App extends Component {
     var audio = document.getElementById('audioBox');
     setInterval(() => {
       document.getElementById('inputRange').value = audio.currentTime;
-    }, 2000);
+    }, 1000);
     
 
     var audio = document.getElementById('audioBox');
@@ -129,8 +129,18 @@ export default class App extends Component {
 
       text = textMinutes + ':' + textSeconds;
       document.getElementById('timeline').innerHTML = text;
-    }, 1000);
+    }, 100);
 
+    var count = this.state.count;
+
+      setInterval(() => {
+        if(this.state.isPlaying == true)
+        {
+          count = count + 10;
+          document.getElementById('circleBox').style.transform = 'rotate(' + count + 'deg)';
+        }
+      }, 1000)
+    
     
   }
 

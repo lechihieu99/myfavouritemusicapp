@@ -107,8 +107,9 @@ export default class App extends Component {
     document.getElementById('inputRange').value = 0;
     document.getElementById('volume').value = 60;
     var value = document.getElementById('volume').value;
-    this.setState({volume : parseInt(value)})
+    this.setState({volume : value})
     var audio = document.getElementById('audioBox');
+    audio.volume = parseInt(value) / 100;
     setInterval(() => {
       document.getElementById('inputRange').value = audio.currentTime;
     }, 1000);
@@ -194,7 +195,7 @@ export default class App extends Component {
     circle.style.backgroundImage = 'url(' + this.state.circleBox[id] + ')';
 
     audio.src = this.state.arr[id];
-    audio.volume = 0.6;
+    audio.volume = this.state.volume / 100;
     this.setState({audioBox : audio});
     audio.play();
 
@@ -233,7 +234,7 @@ export default class App extends Component {
     document.getElementById('circleBox').style.backgroundImage = 'url(' + this.state.circleBox[idButton] + ')';
 
     audio.src = this.state.arr[idButton];
-    audio.volume = 0.6;
+    audio.volume = parseInt(this.state.volume) / 100;
 
     audio.play();
 
@@ -251,7 +252,7 @@ export default class App extends Component {
     var audio = document.getElementById('audioBox');
 
     let isPlaying = this.state.isPlaying;
-    audio.volume = 0.6;
+    audio.volume = parseInt(this.state.volume) / 100;
     isPlaying == true ? audio.pause() : audio.play() ;
 
     this.setState({isPlaying : !isPlaying});
@@ -279,7 +280,7 @@ export default class App extends Component {
     var circle = document.getElementById('circleBox');
     circle.style.backgroundImage = 'url(' + this.state.circleBox[id] + ')';
     audio.src = this.state.arr[id];
-    audio.volume = 0.6;
+    audio.volume = parseInt(this.state.volume) / 100;
     audio.play();
 
     this.changeBackground(id, this.state.idSong);
